@@ -1,2 +1,1 @@
-Plus
-====
+A silly program based on my childhood fascination with constantly adding 1 to a number on a calculator. I sure was easily amused...

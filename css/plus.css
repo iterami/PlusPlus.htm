@@ -1,0 +1,8 @@
+.c{
+    font-weight: bold;
+    padding-top: 4px;
+}
+input{
+    cursor: pointer;
+    font-size: 100%;
+}
