@@ -1,28 +1,24 @@
-function get(i){
-    return document.getElementById(i);
-}
-
 function plus(){
-    get('number').innerHTML = parseInt(get('number').innerHTML) + 1;
+    document.getElementById('number').innerHTML = parseInt(document.getElementById('number').innerHTML) + 1;
 }
 
 function reset(){
     if(confirm('Reset?')){
         localStorage.removeItem('plus-0');
-        get('number').innerHTML = 0;
+        document.getElementById('number').innerHTML = 0;
     }
 }
 
 var unlocked = 1;
-get('number').innerHTML = localStorage.getItem('plus-0') === null
-    ? 0
-    : localStorage.getItem('plus-0');
+document.getElementById('number').innerHTML = localStorage.getItem('plus-0') === null
+  ? 0
+  : localStorage.getItem('plus-0');
 
 window.onbeforeunload = function(e){
-    if(parseInt(get('number').innerHTML) > 0){
+    if(parseInt(document.getElementById('number').innerHTML) > 0){
         localStorage.setItem(
-            'plus-0',
-            get('number').innerHTML
+          'plus-0',
+          document.getElementById('number').innerHTML
         );
     }
 }
