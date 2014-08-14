@@ -9,7 +9,7 @@ function reset(){
     }
 }
 
-var unlocked = 1;
+var unlocked = true;
 document.getElementById('number').innerHTML = localStorage.getItem('plus-0') === null
   ? 0
   : localStorage.getItem('plus-0');
@@ -25,11 +25,11 @@ window.onbeforeunload = function(e){
 
 window.onkeydown = function(e){
     if(unlocked){
-        unlocked = 0;
+        unlocked = false;
         plus();
     }
 };
 
 window.onkeyup = function(e){
-    unlocked = 1;
+    unlocked = true;
 };
