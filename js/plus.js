@@ -1,23 +1,25 @@
 function plus(){
-    document.getElementById('number').innerHTML = parseInt(document.getElementById('number').innerHTML) + 1;
+    document.getElementById('number').innerHTML =
+      parseInt(document.getElementById('number').innerHTML) + 1;
 }
 
 function reset(){
     if(confirm('Reset?')){
-        localStorage.removeItem('plus-0');
+        localStorage.removeItem('Plus.htm-number');
         document.getElementById('number').innerHTML = 0;
     }
 }
 
 var unlocked = true;
-document.getElementById('number').innerHTML = localStorage.getItem('plus-0') === null
-  ? 0
-  : localStorage.getItem('plus-0');
+document.getElementById('number').innerHTML =
+  localStorage.getItem('Plus.htm-number') === null
+    ? 0
+    : localStorage.getItem('Plus.htm-number');
 
 window.onbeforeunload = function(e){
     if(parseInt(document.getElementById('number').innerHTML) > 0){
         localStorage.setItem(
-          'plus-0',
+          'Plus.htm-number',
           document.getElementById('number').innerHTML
         );
     }
