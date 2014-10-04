@@ -1,8 +1,14 @@
+body{
+    background: #000;
+    color: #aaa;
+}
 .c{
     font-weight: bold;
     padding-top: 4px;
 }
 input{
+    background: #000;
+    color: #aaa;
     cursor: pointer;
     font-size: 100%;
 }
