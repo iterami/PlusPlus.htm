@@ -4,10 +4,12 @@ function plus(){
 }
 
 function reset(){
-    if(confirm('Reset?')){
-        localStorage.removeItem('Plus.htm-number');
-        document.getElementById('number').innerHTML = 0;
+    if(!confirm('Reset?')){
+        return;
     }
+
+    localStorage.removeItem('Plus.htm-number');
+    document.getElementById('number').innerHTML = 0;
 }
 
 var unlocked = true;
