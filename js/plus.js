@@ -4,7 +4,7 @@ function plus(){
 }
 
 function reset(){
-    if(!confirm('Reset?')){
+    if(!confirm('Reset score?')){
         return;
     }
 
