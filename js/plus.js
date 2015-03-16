@@ -12,7 +12,7 @@ function reset(){
     document.getElementById('number').innerHTML = 0;
 }
 
-var unlocked = true;
+var locked = false;
 document.getElementById('number').innerHTML =
   window.localStorage.getItem('Plus.htm-number') === null
     ? 0
@@ -28,14 +28,14 @@ window.onbeforeunload = function(e){
 }
 
 window.onkeydown = function(e){
-    if(!unlocked){
+    if(locked){
         return;
     }
 
-    unlocked = false;
+    locked = true;
     plus();
 };
 
 window.onkeyup = function(e){
-    unlocked = true;
+    locked = false;
 };
