@@ -14,9 +14,7 @@ function reset(){
 
 var locked = false;
 document.getElementById('number').innerHTML =
-  window.localStorage.getItem('Plus.htm-number') === null
-    ? 0
-    : window.localStorage.getItem('Plus.htm-number');
+  window.localStorage.getItem('Plus.htm-number') || 0;
 
 window.onbeforeunload = function(e){
     if(parseInt(document.getElementById('number').innerHTML) > 0){
