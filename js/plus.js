@@ -13,8 +13,6 @@ function reset(){
 }
 
 var locked = false;
-document.getElementById('number').innerHTML =
-  window.localStorage.getItem('Plus.htm-number') || 0;
 
 window.onbeforeunload = function(e){
     if(parseInt(document.getElementById('number').innerHTML) > 0){
@@ -36,4 +34,9 @@ window.onkeydown = function(e){
 
 window.onkeyup = function(e){
     locked = false;
+};
+
+window.onload = function(e){
+    document.getElementById('number').innerHTML =
+      window.localStorage.getItem('Plus.htm-number') || 0;
 };
