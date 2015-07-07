@@ -1,3 +1,5 @@
+'use strict';
+
 function plus(){
     document.getElementById('number').innerHTML =
       parseInt(document.getElementById('number').innerHTML) + 1;
