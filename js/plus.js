@@ -1,8 +1,10 @@
 'use strict';
 
 function plus(){
-    document.getElementById('number').innerHTML =
-      parseInt(document.getElementById('number').innerHTML) + 1;
+    var total = parseInt(document.getElementById('number').innerHTML) + 1;
+
+    document.getElementById('number').innerHTML = total;
+    setTitle(total);
 }
 
 function reset(){
@@ -12,6 +14,11 @@ function reset(){
 
     window.localStorage.removeItem('Plus.htm-number');
     document.getElementById('number').innerHTML = 0;
+    setTitle(0);
+}
+
+function setTitle(newTitle){
+    document.title = newTitle + ' - Plus.htm';
 }
 
 var locked = false;
@@ -41,4 +48,5 @@ window.onkeyup = function(e){
 window.onload = function(e){
     document.getElementById('number').innerHTML =
       window.localStorage.getItem('Plus.htm-number') || 0;
+    setTitle(document.getElementById('number').innerHTML);
 };
