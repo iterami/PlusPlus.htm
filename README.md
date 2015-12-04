@@ -1,5 +1,5 @@
-Plus.htm
---------
+PlusPlus.htm
+------------
 
 A project based on childhood fascinations with constantly adding 1 to a number on a calculator.
 
@@ -7,4 +7,4 @@ A project based on childhood fascinations with constantly adding 1 to a number o
 
 Action | Key
 -------|----
-Plus 1 | Any
+++     | Any
