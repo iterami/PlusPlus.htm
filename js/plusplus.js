@@ -1,7 +1,10 @@
 'use strict';
 
 function plus(){
-    var total = parseInt(document.getElementById('number').innerHTML) + 1;
+    var total = parseInt(
+      document.getElementById('number').innerHTML,
+      10
+    ) + 1;
 
     document.getElementById('number').innerHTML = total;
     setTitle(total);
@@ -24,7 +27,7 @@ function setTitle(newTitle){
 var locked = false;
 
 window.onbeforeunload = function(e){
-    if(parseInt(document.getElementById('number').innerHTML) > 0){
+    if(parseInt(document.getElementById('number').innerHTML, 10) > 0){
         window.localStorage.setItem(
           'PlusPlus.htm-number',
           document.getElementById('number').innerHTML
