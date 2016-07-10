@@ -34,11 +34,11 @@ window.onbeforeunload = function(e){
 }
 
 window.onload = function(e){
-    init_input(
+    input_init(
       {
         'all': {
           'todo': function(){
-              if(!keys['all']['state']){
+              if(!input_keys['all']['state']){
                   plus();
               }
           },
