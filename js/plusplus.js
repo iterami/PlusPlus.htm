@@ -49,4 +49,7 @@ window.onload = function(e){
     document.getElementById('number').innerHTML =
       window.localStorage.getItem('PlusPlus.htm-number') || 0;
     setTitle(document.getElementById('number').innerHTML);
+
+    document.getElementById('plus').onclick = plus;
+    document.getElementById('reset').onclick = reset;
 };
