@@ -34,8 +34,8 @@ window.onbeforeunload = function(e){
 }
 
 window.onload = function(e){
-    input_init(
-      {
+    input_init({
+      'keybinds': {
         'all': {
           'todo': function(){
               if(!input_keys['all']['state']){
@@ -43,8 +43,8 @@ window.onload = function(e){
               }
           },
         },
-      }
-    );
+      },
+    });
 
     document.getElementById('number').innerHTML =
       window.localStorage.getItem('PlusPlus.htm-number') || 0;
