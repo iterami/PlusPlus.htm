@@ -24,15 +24,6 @@ function setTitle(newTitle){
     document.title = newTitle + ' - PlusPlus.htm';
 }
 
-window.onbeforeunload = function(e){
-    if(parseInt(document.getElementById('number').innerHTML, 10) > 0){
-        window.localStorage.setItem(
-          'PlusPlus.htm-number',
-          document.getElementById('number').innerHTML
-        );
-    }
-}
-
 window.onload = function(e){
     input_init({
       'keybinds': {
@@ -52,4 +43,13 @@ window.onload = function(e){
 
     document.getElementById('plus').onclick = plus;
     document.getElementById('reset').onclick = reset;
+
+    window.onbeforeunload = function(e){
+        if(parseInt(document.getElementById('number').innerHTML, 10) > 0){
+            window.localStorage.setItem(
+              'PlusPlus.htm-number',
+              document.getElementById('number').innerHTML
+            );
+        }
+    };
 };
