@@ -25,11 +25,11 @@ function setTitle(newTitle){
 }
 
 window.onload = function(e){
-    input_init({
+    core_input_init({
       'keybinds': {
         'all': {
           'todo': function(){
-              if(!input_keys['all']['state']){
+              if(!core_input_keys['all']['state']){
                   plus();
               }
           },
