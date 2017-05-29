@@ -10,22 +10,8 @@ function plus(){
     setTitle(total);
 }
 
-function reset(){
-    if(!window.confirm('Reset score?')){
-        return;
-    }
-
-    window.localStorage.removeItem('PlusPlus.htm-number');
-    document.getElementById('number').innerHTML = 0;
-    setTitle(0);
-}
-
-function setTitle(newTitle){
-    document.title = newTitle + ' - PlusPlus.htm';
-}
-
-window.onload = function(e){
-    core_input_init({
+function repo_init(){
+    core_input_binds_add({
       'keybinds': {
         'all': {
           'todo': function(){
@@ -52,4 +38,18 @@ window.onload = function(e){
             );
         }
     };
-};
+}
+
+function reset(){
+    if(!window.confirm('Reset score?')){
+        return;
+    }
+
+    window.localStorage.removeItem('PlusPlus.htm-number');
+    document.getElementById('number').innerHTML = 0;
+    setTitle(0);
+}
+
+function setTitle(newTitle){
+    document.title = newTitle + ' - PlusPlus.htm';
+}
