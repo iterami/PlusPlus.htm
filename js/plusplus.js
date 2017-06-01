@@ -12,6 +12,16 @@ function plus(){
 
 function repo_init(){
     core_input_binds_add({
+      'beforeunload': {
+        'todo': function(){
+            if(parseInt(document.getElementById('number').innerHTML, 10) > 0){
+                window.localStorage.setItem(
+                  'PlusPlus.htm-number',
+                  document.getElementById('number').innerHTML
+                );
+            }
+        },
+      },
       'keybinds': {
         'all': {
           'todo': function(){
@@ -29,15 +39,6 @@ function repo_init(){
 
     document.getElementById('plus').onclick = plus;
     document.getElementById('reset').onclick = reset;
-
-    window.onbeforeunload = function(e){
-        if(parseInt(document.getElementById('number').innerHTML, 10) > 0){
-            window.localStorage.setItem(
-              'PlusPlus.htm-number',
-              document.getElementById('number').innerHTML
-            );
-        }
-    };
 }
 
 function reset(){
