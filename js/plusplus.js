@@ -11,7 +11,7 @@ function plus(){
 }
 
 function repo_init(){
-    core_input_binds_add({
+    core_events_bind({
       'beforeunload': {
         'todo': function(){
             if(parseInt(document.getElementById('number').innerHTML, 10) > 0){
