@@ -11,6 +11,9 @@ function plus(){
 }
 
 function repo_init(){
+    core_repo_init({
+      'title': 'PlusPlus.htm',
+    });
     core_events_bind({
       'beforeunload': {
         'todo': function(){
