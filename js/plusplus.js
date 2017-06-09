@@ -7,12 +7,6 @@ function plus(){
 
 function repo_init(){
     core_repo_init({
-      'storage': {
-        'score': 0,
-      },
-      'title': 'PlusPlus.htm',
-    });
-    core_events_bind({
       'beforeunload': {
         'todo': core_storage_save,
       },
@@ -25,6 +19,10 @@ function repo_init(){
           },
         },
       },
+      'storage': {
+        'score': 0,
+      },
+      'title': 'PlusPlus.htm',
     });
 
     core_storage_update();
