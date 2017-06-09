@@ -1,34 +1,25 @@
 'use strict';
 
 function plus(){
-    var total = parseInt(
-      document.getElementById('number').innerHTML,
-      10
-    ) + 1;
-
-    document.getElementById('number').innerHTML = total;
-    setTitle(total);
+    core_storage_data['score'] += 1;
+    core_storage_update();
 }
 
 function repo_init(){
     core_repo_init({
+      'storage': {
+        'score': 0,
+      },
       'title': 'PlusPlus.htm',
     });
     core_events_bind({
       'beforeunload': {
-        'todo': function(){
-            if(parseInt(document.getElementById('number').innerHTML, 10) > 0){
-                window.localStorage.setItem(
-                  'PlusPlus.htm-number',
-                  document.getElementById('number').innerHTML
-                );
-            }
-        },
+        'todo': core_storage_save,
       },
       'keybinds': {
         'all': {
           'todo': function(){
-              if(!core_input_keys['all']['state']){
+              if(!core_keys['all']['state']){
                   plus();
               }
           },
@@ -36,24 +27,8 @@ function repo_init(){
       },
     });
 
-    document.getElementById('number').innerHTML =
-      window.localStorage.getItem('PlusPlus.htm-number') || 0;
-    setTitle(document.getElementById('number').innerHTML);
+    core_storage_update();
 
     document.getElementById('plus').onclick = plus;
-    document.getElementById('reset').onclick = reset;
-}
-
-function reset(){
-    if(!window.confirm('Reset score?')){
-        return;
-    }
-
-    window.localStorage.removeItem('PlusPlus.htm-number');
-    document.getElementById('number').innerHTML = 0;
-    setTitle(0);
-}
-
-function setTitle(newTitle){
-    document.title = newTitle + ' - PlusPlus.htm';
+    document.getElementById('reset').onclick = core_storage_reset;
 }
