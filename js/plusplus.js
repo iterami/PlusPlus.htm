@@ -25,5 +25,4 @@ function repo_init(){
     core_storage_update();
 
     document.getElementById('plus').onclick = plus;
-    document.getElementById('reset').onclick = core_storage_reset;
 }
