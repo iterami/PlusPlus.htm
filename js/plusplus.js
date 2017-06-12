@@ -7,9 +7,6 @@ function plus(){
 
 function repo_init(){
     core_repo_init({
-      'beforeunload': {
-        'todo': core_storage_save,
-      },
       'keybinds': {
         'all': {
           'todo': function(){
