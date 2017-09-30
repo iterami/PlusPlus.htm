@@ -2,7 +2,9 @@
 
 function plus(){
     core_storage_data['score'] += 1;
-    core_storage_update();
+    core_storage_update({
+      'bests': true,
+    });
 }
 
 function repo_init(){
@@ -17,7 +19,10 @@ function repo_init(){
         },
       },
       'storage': {
-        'score': 0,
+        'score': {
+          'default': 0,
+          'type': 1,
+        },
       },
       'title': 'PlusPlus.htm',
     });
