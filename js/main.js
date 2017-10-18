@@ -2,6 +2,11 @@
 
 function repo_init(){
     core_repo_init({
+      'info-events': {
+        'plus': {
+          'todo': plus,
+        },
+      },
       'keybinds': {
         'all': {
           'todo': function(){
@@ -21,6 +26,4 @@ function repo_init(){
     });
 
     core_storage_update();
-
-    document.getElementById('plus').onclick = plus;
 }
