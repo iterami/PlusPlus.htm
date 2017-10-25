@@ -2,9 +2,9 @@
 
 function repo_init(){
     core_repo_init({
-      'info-events': {
+      'events': {
         'plus': {
-          'todo': plus,
+          'onclick': plus,
         },
       },
       'keybinds': {
