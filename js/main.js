@@ -17,10 +17,7 @@ function repo_init(){
         },
       },
       'storage': {
-        'score': {
-          'default': 0,
-          'type': 1,
-        },
+        'score': 0,
       },
       'title': 'PlusPlus.htm',
     });
