@@ -4,7 +4,10 @@ function repo_init(){
     core_repo_init({
       'events': {
         'plus': {
-          'onclick': plus,
+          'onclick': function(){
+              this.blur();
+              plus();
+          },
         },
       },
       'keybinds': {
