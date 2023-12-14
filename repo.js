@@ -2,7 +2,7 @@
 
 function plus(){
     core_storage_data['score'] += 1;
-    core_storage_update();
+    update();
 }
 
 function repo_init(){
@@ -30,5 +30,10 @@ function repo_init(){
       'title': 'PlusPlus.htm',
     });
 
+    update();
+}
+
+function update(){
     core_storage_update();
+    document.title = core_storage_data['score'] + ' - ' + core_repo_title;
 }
