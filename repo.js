@@ -16,12 +16,8 @@ function repo_init(){
         },
       },
       'keybinds': {
-        'all': {
-          'todo': function(){
-              if(!core_keys['all']['state']){
-                  plus();
-              }
-          },
+        'KeyP': {
+          'todo': plus,
         },
       },
       'storage': {
