@@ -3,6 +3,7 @@
 function plus(){
     core_storage_data['score'] += 1;
     update();
+    core_storage_save();
 }
 
 function repo_init(){
