@@ -1,7 +1,7 @@
 'use strict';
 
 function plus(){
-    core_storage_data['score'] += 1;
+    core_storage_data.score += 1;
     update();
     core_storage_save();
 }
@@ -32,5 +32,5 @@ function repo_init(){
 
 function update(){
     core_storage_update();
-    document.title = core_storage_data['score'] + ' - ' + core_repo_title;
+    document.title = core_storage_data.score + ' - ' + core_repo_title;
 }
