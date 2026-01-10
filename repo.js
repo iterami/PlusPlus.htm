@@ -18,7 +18,7 @@ function repo_init(){
       },
       'keybinds': {
         'KeyP': {
-          'todo': plus,
+          'down': plus,
         },
       },
       'storage': {
